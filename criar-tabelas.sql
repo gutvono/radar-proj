@@ -13,7 +13,10 @@ CREATE TABLE Radar
     sentido VARCHAR(20) NOT NULL,
     data_da_inativacao DATE,
     latitude VARCHAR(10) NOT NULL,
+    longitude VARCHAR(10) NOT NULL,
     velocidade_leve VARCHAR(3) NOT NULL,
 
     CONSTRAINT PkRadar PRIMARY KEY (id)
 )
+
+DROP TABLE Radar
