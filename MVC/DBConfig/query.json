@@ -1,0 +1,20 @@
+{
+  "SQL": {
+    "Connection": "Data Source = 127.0.0.1; Initial Catalog=CarLessons; User Id=sa; Password=SqlServer2019!; TrustServerCertificate=True",
+    "Query": {
+      "INSERT": "INSERT INTO Radar (concessionaria, ano_do_pnv_snv, rodovia, uf, km_m, municipio, tipo_pista, sentido, data_da_inativacao, latitude, longitude, velocidade_leve) VALUES (@Concessionaria, @AnoDoPnvSnv, @Rodovia, @Uf, @Km_m, @Municipio, @TipoPista, @Sentido, @DataDaInativacao, @Latitude, @Longitude, @VelocidadeLeve)",
+      "INSERTMANY": "INSERT INTO Radar (concessionaria, ano_do_pnv_snv, rodovia, uf, km_m, municipio, tipo_pista, sentido, data_da_inativacao, latitude, longitude, velocidade_leve) VALUES",
+      "UPDATE": "UPDATE Radar SET concessionaria = @Concessionaria, @AnoDoPnvSnv, @Rodovia, @Uf, @Km_m, @Municipio, @TipoPista, @Sentido, @DataDaInativacao, @Latitude, @Longitude, @VelocidadeLeve) WHERE id = @Id",
+      "DELETE": "DELETE FROM Radar WHERE id = @Id",
+      "GET": "SELECT id, concessionaria, ano_do_pnv_snv, rodovia, uf, km_m, municipio, tipo_pista, sentido, data_da_inativacao, latitude, longitude, velocidade_leve WHERE id = @Id",
+      "GETALL": "SELECT id, concessionaria, ano_do_pnv_snv, rodovia, uf, km_m, municipio, tipo_pista, sentido, data_da_inativacao, latitude, longitude, velocidade_leve FROM Radar"
+    }
+  },
+  "MONGO": {
+    "INSERT": "",
+    "UPDATE": "",
+    "DELETE": "",
+    "GET": "",
+    "GETALL": ""
+  }
+}

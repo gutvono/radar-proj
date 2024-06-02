@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -9,7 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\MVC\Model\Model.csproj" />
-    <ProjectReference Include="..\Controller\Controller.csproj" />
+    <ProjectReference Include="..\..\MVC\MVC\MVC.csproj" />
+    <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
 </Project>
