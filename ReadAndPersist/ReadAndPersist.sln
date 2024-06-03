@@ -11,11 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "..\MVC\Model\Model
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBConfig", "..\MVC\DBConfig\DBConfig.csproj", "{8F9C55C9-52E4-47DD-A675-FFD243A1A7CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAPRepository", "Repository\RAPRepository.csproj", "{20B6559B-007D-4D49-8973-06FBA841EAC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RAPRepository", "Repository\RAPRepository.csproj", "{20B6559B-007D-4D49-8973-06FBA841EAC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{761679E0-6504-4C1A-A601-DF404885E400}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAPService", "RAPService\RAPService.csproj", "{578AF2A1-3210-4FF4-B092-91A20BCA1B9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller\Controller.csproj", "{02230C13-79C9-46AC-9C64-B1A436318232}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAPController", "RAPController\RAPController.csproj", "{2C8EF1E9-EFD0-48A1-8AA9-8051AA2BDE06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadarRepository", "..\Persist\Repository\RadarRepository.csproj", "{46301945-47C5-41BE-9360-044D7EF726FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,14 +45,18 @@ Global
 		{20B6559B-007D-4D49-8973-06FBA841EAC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20B6559B-007D-4D49-8973-06FBA841EAC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20B6559B-007D-4D49-8973-06FBA841EAC8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{761679E0-6504-4C1A-A601-DF404885E400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{761679E0-6504-4C1A-A601-DF404885E400}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{761679E0-6504-4C1A-A601-DF404885E400}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{761679E0-6504-4C1A-A601-DF404885E400}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02230C13-79C9-46AC-9C64-B1A436318232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02230C13-79C9-46AC-9C64-B1A436318232}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02230C13-79C9-46AC-9C64-B1A436318232}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02230C13-79C9-46AC-9C64-B1A436318232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{578AF2A1-3210-4FF4-B092-91A20BCA1B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{578AF2A1-3210-4FF4-B092-91A20BCA1B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{578AF2A1-3210-4FF4-B092-91A20BCA1B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{578AF2A1-3210-4FF4-B092-91A20BCA1B9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C8EF1E9-EFD0-48A1-8AA9-8051AA2BDE06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8EF1E9-EFD0-48A1-8AA9-8051AA2BDE06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8EF1E9-EFD0-48A1-8AA9-8051AA2BDE06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8EF1E9-EFD0-48A1-8AA9-8051AA2BDE06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46301945-47C5-41BE-9360-044D7EF726FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46301945-47C5-41BE-9360-044D7EF726FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46301945-47C5-41BE-9360-044D7EF726FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46301945-47C5-41BE-9360-044D7EF726FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
