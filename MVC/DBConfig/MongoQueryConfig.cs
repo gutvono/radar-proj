@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DBConfig
 {
-    public class SqlQueryConfig
+    public class MongoQueryConfig
     {
         [JsonProperty("INSERT")]
         public string Insert { get; set; }

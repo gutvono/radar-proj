@@ -15,34 +15,16 @@ namespace Controller
 
         public RadarController () { _radarService = new(); }
 
-        public override bool Delete(int id)
-        {
-            return _radarService.Delete(id);
-        }
+        public override bool Delete(int id) => _radarService.Delete(id);
 
-        public override Radar Get(int id)
-        {
-            return _radarService.Get(id);
-        }
+        public override Radar Get(int id) => _radarService.Get(id);
 
-        public override List<Radar> GetAll()
-        {
-            return _radarService.GetAll();
-        }
+        public override List<Radar> GetAll() => _radarService.GetAll();
 
-        public override bool Insert(Radar entity)
-        {
-            return _radarService.Insert(entity);
-        }
+        public override bool Insert(Radar entity) => _radarService.Insert(entity);
 
-        public override bool InsertMany(List<Radar> entities)
-        {
-            return _radarService.InsertMany(entities);
-        }
+        public override bool InsertMany(List<Radar> entities) => _radarService.InsertMany(entities);
 
-        public override bool Update(Radar entity)
-        {
-            return _radarService.Update(entity);
-        }
+        public override bool Update(Radar entity) => _radarService.Update(entity);
     }
 }

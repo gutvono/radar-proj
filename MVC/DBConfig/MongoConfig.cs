@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace DBConfig
 {
-    public class SqlConfig
+    public class MongoConfig
     {
         [JsonProperty("Connection")]
         public string Connection { get; set; }
 
         [JsonProperty("Query")]
-        public SqlQueryConfig Query { get; set; }
+        public MongoQueryConfig Query { get; set; }
     }
 }

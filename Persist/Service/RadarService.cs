@@ -15,34 +15,16 @@ namespace Service
 
         public RadarService() { _repository = new(); }
 
-        public override bool Delete(int id)
-        {
-            return _repository.Delete(id);
-        }
+        public override bool Delete(int id) => _repository.Delete(id);
 
-        public override Radar Get(int id)
-        {
-            return _repository.Get(id);
-        }
+        public override Radar Get(int id) => _repository.Get(id);
 
-        public override List<Radar> GetAll()
-        {
-            return _repository.GetAll();
-        }
+        public override List<Radar> GetAll() => _repository.GetAll();
 
-        public override bool Insert(Radar entity)
-        {
-            return _repository.Insert(entity);
-        }
+        public override bool Insert(Radar entity) => _repository.Insert(entity);
 
-        public override bool InsertMany(List<Radar> entities)
-        {
-            return _repository.InsertMany(entities);
-        }
+        public override bool InsertMany(List<Radar> entities) => _repository.InsertMany(entities);
 
-        public override bool Update(Radar entity)
-        {
-            return _repository.Update(entity);
-        }
+        public override bool Update(Radar entity) => _repository.Update(entity);
     }
 }

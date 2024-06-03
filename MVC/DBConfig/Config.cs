@@ -10,8 +10,9 @@ namespace DBConfig
     public class Config
     {
         [JsonProperty("SQL")]
-        public SqlConfig Sql { get; }
+        public SqlConfig Sql { get; set; }
+
         [JsonProperty("MONGO")]
-        public string Mongo { get; }
+        public MongoConfig Mongo { get; set; }
     }
 }

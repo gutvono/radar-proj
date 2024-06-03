@@ -7,23 +7,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 
 namespace Repository
 {
     public class RadarRepository : GenericMvcClass<Radar>
     {
-        SqlConnection connection;
-        private readonly Config _config;
+        private SqlConnection connection;
+        private Config _config;
 
         public RadarRepository()
         {
-            connection = new(_config.Sql.ConnectionString);
-            connection.Open();
+            string JsonFilePath = @"C:\5by5\radar-proj\MVC\DBConfig\query.json";
+
+            try { _config = JsonLoader.LoadConfig(JsonFilePath); }
+            catch (Exception e) { Console.WriteLine($"Falha ao sincronizar arquivo JSON {JsonFilePath}"); }
+
+            connection = new SqlConnection("Data Source = 127.0.0.1; Initial Catalog=RadarDB; User Id=sa; Password=SqlServer2019!; TrustServerCertificate=True");
         }
 
         public override bool Delete(int id)
         {
+            connection.Open();
             bool result = false;
 
             try
@@ -46,6 +52,7 @@ namespace Repository
 
         public override Radar? Get(int id)
         {
+            connection.Open();
             Radar radar = null;
 
             try
@@ -85,6 +92,7 @@ namespace Repository
 
         public override List<Radar> GetAll()
         {
+            connection.Open();
             List<Radar> radarList = new();
 
             try
@@ -125,6 +133,7 @@ namespace Repository
 
         public override bool Insert(Radar entity)
         {
+            connection.Open();
             bool result = false;
 
             try
@@ -161,6 +170,7 @@ namespace Repository
 
         public override bool InsertMany(List<Radar> entities)
         {
+            connection.Open();
             bool result = false;
 
             try
@@ -169,8 +179,7 @@ namespace Repository
                 {
                     using (SqlCommand cmd = new())
                     {
-                        StringBuilder insertQuery = new();
-                        insertQuery.Append(_config.Sql.Query.InsertMany);
+                        string insertQuery = _config.Sql.Query.InsertMany;
 
                         int paramIndex = 0;
 
@@ -178,58 +187,37 @@ namespace Repository
                         {
                             if (entity.Concessionaria != null)
                             {
-                                if (paramIndex > 0) insertQuery.Append(", ");
-
-                                insertQuery.Append($"(@Concessionaria{paramIndex}, " +
-                                    $"@AnoDoPnvSnv{paramIndex}, " +
-                                    $"@Rodovia{paramIndex}, " +
-                                    $"@Uf{paramIndex}, " +
-                                    $"@Km_m{paramIndex}, " +
-                                    $"@Municipio{paramIndex}, " +
-                                    $"@TipoPista{paramIndex}, " +
-                                    $"@Sentido{paramIndex}, " +
-                                    $"@DataDaInativacao{paramIndex}, " +
-                                    $"@Latitude{paramIndex}, " +
-                                    $"@Longitude{paramIndex}, " +
-                                    $"@VelocidadeLeve{paramIndex})");
-
-                                cmd.Parameters.AddWithValue($"@Concessionaria{paramIndex}", entity.Concessionaria);
-                                cmd.Parameters.AddWithValue($"@AnoDoPnvSnv{paramIndex}", entity.AnoDoPnvSnv);
-                                cmd.Parameters.AddWithValue($"@Rodovia{paramIndex}", entity.Rodovia);
-                                cmd.Parameters.AddWithValue($"@Uf{paramIndex}", entity.Uf);
-                                cmd.Parameters.AddWithValue($"@Km_m{paramIndex}", entity.Km_m);
-                                cmd.Parameters.AddWithValue($"@Municipio{paramIndex}", entity.Municipio);
-                                cmd.Parameters.AddWithValue($"@TipoPista{paramIndex}", entity.TipoPista);
-                                cmd.Parameters.AddWithValue($"@Sentido{paramIndex}", entity.Sentido);
-                                cmd.Parameters.AddWithValue($"@DataDaInativacao{paramIndex}", entity.DataDaInativacao);
-                                cmd.Parameters.AddWithValue($"@Latitude{paramIndex}", entity.Latitude);
-                                cmd.Parameters.AddWithValue($"@Longitude{paramIndex}", entity.Longitude);
-                                cmd.Parameters.AddWithValue($"@VelocidadeLeve{paramIndex}", entity.VelocidadeLeve);
-
-                                paramIndex++;
+                                insertQuery += $"\n('{entity.Concessionaria}', " +
+                                    $"'{entity.AnoDoPnvSnv}', " +
+                                    $"'{entity.Rodovia}', " +
+                                    $"'{entity.Uf}', " +
+                                    $"'{entity.Km_m}', " +
+                                    $"'{entity.Municipio}', " +
+                                    $"'{entity.TipoPista}', " +
+                                    $"'{entity.Sentido}', " +
+                                    $"'{entity.DataDaInativacao}', " +
+                                    $"'{entity.Latitude}', " +
+                                    $"'{entity.Longitude}', " +
+                                    $"'{entity.VelocidadeLeve}'),";
                             }
                         }
 
-                        if (paramIndex > 0)
+                        cmd.CommandText = insertQuery.Substring(0, insertQuery.Length - 1);
+                        cmd.Connection = connection;
+
+                        try
                         {
-                            cmd.CommandText = insertQuery.ToString();
-                            cmd.Connection = connection;
-
-                            try
-                            {
-                                connection.Open();
-                                cmd.ExecuteNonQuery();
-                                result = true;
-                            }
-                            catch (SqlException e)
-                            {
-                                Console.WriteLine($"--ERRO AO INSERIR QUERY SQL:\n" +
-                                                  $"cod.: {e.ErrorCode}\n" +
-                                                  $"msg: {e.Message}\n");
-                            }
-                            finally { cmd.Parameters.Clear(); }
+                            cmd.ExecuteNonQuery();
+                            result = true;
                         }
-                    };
+                        catch (SqlException e)
+                        {
+                            Console.WriteLine($"--ERRO AO INSERIR QUERY SQL:\n" +
+                                              $"cod.: {e.ErrorCode}\n" +
+                                              $"msg: {e.Message}\n");
+                        }
+                        finally { cmd.Parameters.Clear(); }
+                    }
                 }
             }
             catch (Exception e)
@@ -244,6 +232,7 @@ namespace Repository
 
         public override bool Update(Radar entity)
         {
+            connection.Open();
             bool result = false;
 
             try
