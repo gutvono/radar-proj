@@ -53,7 +53,7 @@ namespace RadarRepository
         public override Radar? Get(int id)
         {
             connection.Open();
-            Radar radar = null;
+            Radar radar = new();
 
             try
             {
