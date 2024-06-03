@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller
+namespace RadarController
 {
-    public class RadarController : GenericMvcClass<Radar>
+    public class RadarControllerClass : GenericMvcClass<Radar>
     {
-        private readonly RadarService _radarService;
+        private readonly RadarServiceClass _radarService;
 
-        public RadarController () { _radarService = new(); }
+        public RadarControllerClass () { _radarService = new(); }
 
         public override bool Delete(int id) => _radarService.Delete(id);
 

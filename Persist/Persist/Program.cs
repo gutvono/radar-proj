@@ -1,4 +1,4 @@
-﻿using Controller;
+﻿using RadarController;
 using Model;
 using Newtonsoft.Json;
 using System;
@@ -9,7 +9,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        RadarController radarController = new RadarController();
+        RadarControllerClass radarController = new RadarControllerClass();
         int opcao = 0;
         Radar radar = null;
 

@@ -5,11 +5,11 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persist", "Persist\Persist.csproj", "{A590476F-0C5A-479C-8F8E-DFB128AE11B5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "Controller\Controller.csproj", "{20F54FE8-14DB-4520-8A6C-C033EA6406FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadarController", "Controller\RadarController.csproj", "{20F54FE8-14DB-4520-8A6C-C033EA6406FD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{2D5900F1-C4CE-47B4-A0C6-E501E4E0D8C9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{5FFE155C-B4E8-41A2-908A-486511E52A1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadarRepository", "Repository\RadarRepository.csproj", "{5FFE155C-B4E8-41A2-908A-486511E52A1F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC", "..\MVC\MVC\MVC.csproj", "{7BBF5331-1E26-438C-A32B-62D67E197545}"
 EndProject

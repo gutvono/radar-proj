@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\MVC\Model\Model.csproj" />
-    <ProjectReference Include="..\Controller\Controller.csproj" />
+    <ProjectReference Include="..\Controller\RadarController.csproj" />
   </ItemGroup>
 
 </Project>

@@ -9,7 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\MVC\Model\Model.csproj" />
     <ProjectReference Include="..\..\MVC\MVC\MVC.csproj" />
-    <ProjectReference Include="..\Repository\Repository.csproj" />
+    <ProjectReference Include="..\Repository\RadarRepository.csproj" />
   </ItemGroup>
 
 </Project>

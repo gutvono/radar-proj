@@ -2,16 +2,16 @@
   "SQL": {
     "Connection": "Data Source = 127.0.0.1; Initial Catalog=RadarDB; User Id=sa; Password=SqlServer2019!; TrustServerCertificate=True",
     "Query": {
-      "INSERT": "INSERT INTO Radar (concessionaria, ano_do_pnv_snv, rodovia, uf, km_m, municipio, tipo_pista, sentido, data_da_inativacao, latitude, longitude, velocidade_leve) VALUES (@Concessionaria, @AnoDoPnvSnv, @Rodovia, @Uf, @Km_m, @Municipio, @TipoPista, @Sentido, @DataDaInativacao, @Latitude, @Longitude, @VelocidadeLeve)",
-      "INSERTMANY": "INSERT INTO Radar (concessionaria, ano_do_pnv_snv, rodovia, uf, km_m, municipio, tipo_pista, sentido, data_da_inativacao, latitude, longitude, velocidade_leve) VALUES",
-      "UPDATE": "UPDATE Radar SET concessionaria = @Concessionaria, @AnoDoPnvSnv, @Rodovia, @Uf, @Km_m, @Municipio, @TipoPista, @Sentido, @DataDaInativacao, @Latitude, @Longitude, @VelocidadeLeve) WHERE id = @Id",
+      "INSERT": "INSERT INTO Radar (concessionaria, ano_do_pnv_snv, tipo_de_radar, rodovia, uf, km_m, municipio, tipo_pista, sentido, situacao, data_da_inativacao, latitude, longitude, velocidade_leve) VALUES (@Concessionaria, @AnoDoPnvSnv, @Rodovia, @Uf, @Km_m, @Municipio, @TipoPista, @Sentido, @DataDaInativacao, @Latitude, @Longitude, @VelocidadeLeve)",
+      "INSERTMANY": "INSERT INTO Radar (concessionaria, ano_do_pnv_snv, tipo_de_radar, rodovia, uf, km_m, municipio, tipo_pista, sentido, situacao, data_da_inativacao, latitude, longitude, velocidade_leve) VALUES",
+      "UPDATE": "UPDATE Radar SET concessionaria = @Concessionaria, ano_do_pnv_snv = @AnoDoPnvSnv, tipo_de_radar = @TipoDeRadar, rodovia = @Rodovia, uf = @Uf, km_m = @Km_m, municipio = @Municipio, tipo_pista = @TipoPista, sentido = @Sentido, situacao = @Situacao, data_da_inativacao = @DataDaInativacao, latitude = @Latitude, longitude = @Longitude, velocidade_leve = @VelocidadeLeve) WHERE id = @Id",
       "DELETE": "DELETE FROM Radar WHERE id = @Id",
-      "GET": "SELECT id, concessionaria, ano_do_pnv_snv, rodovia, uf, km_m, municipio, tipo_pista, sentido, data_da_inativacao, latitude, longitude, velocidade_leve WHERE id = @Id",
-      "GETALL": "SELECT id, concessionaria, ano_do_pnv_snv, rodovia, uf, km_m, municipio, tipo_pista, sentido, data_da_inativacao, latitude, longitude, velocidade_leve FROM Radar"
+      "GET": "SELECT id, concessionaria, ano_do_pnv_snv, tipo_de_radar, rodovia, uf, km_m, municipio, tipo_pista, sentido, situacao, data_da_inativacao, latitude, longitude, velocidade_leve WHERE id = @Id",
+      "GETALL": "SELECT id, concessionaria, ano_do_pnv_snv, tipo_de_radar, rodovia, uf, km_m, municipio, tipo_pista, sentido, situacao, data_da_inativacao, latitude, longitude, velocidade_leve FROM Radar"
     }
   },
   "MONGO": {
-    "Connection": "",
+    "Connection": "mongodb://root:Mongo%402024%23@localhost:27017/",
     "Query": {
       "INSERT": "",
       "UPDATE": "",

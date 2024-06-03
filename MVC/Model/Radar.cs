@@ -17,6 +17,9 @@ namespace Model
         [JsonProperty("ano_do_pnv_snv")]
         public string AnoDoPnvSnv { get; set; }
 
+        [JsonProperty("tipo_de_radar")]
+        public string TipoDeRadar {  get; set; }
+
         [JsonProperty("rodovia")]
         public string Rodovia { get; set; }
 
@@ -34,6 +37,9 @@ namespace Model
 
         [JsonProperty("sentido")]
         public string Sentido { get; set; }
+
+        [JsonProperty("situacao")]
+        public string Situacao { get; set; }
 
         public DateTime? DataDaInativacao { get; set; }
 
@@ -63,12 +69,14 @@ namespace Model
             return $"Id: {Id},\n" +
                 $"Concessionaria: {Concessionaria}, \n" +
                 $"AnoDoPnvSnv: {AnoDoPnvSnv}, \n" +
+                $"TipoDeRadar: {TipoDeRadar}" +
                 $"Rodovia: {Rodovia}, \n" +
                 $"UF: {Uf}, \n" +
                 $"Km_m: {Km_m}, \n" +
                 $"Municipio: {Municipio}, \n" +
                 $"TipoPista: {TipoPista}, \n" +
                 $"Sentido: {Sentido}, \n" +
+                $"Situacao: {Situacao}" +
                 $"DataDaInativacao: {DataDaInativacao}, \n" +
                 $"Latitude: {Latitude}, \n" +
                 $"Longitude: {Longitude}, \n" +

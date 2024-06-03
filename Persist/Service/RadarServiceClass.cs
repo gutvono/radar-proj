@@ -1,6 +1,6 @@
 ﻿using Model;
 using MVC;
-using Repository;
+using RadarRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    public class RadarService : GenericMvcClass<Radar>
+    public class RadarServiceClass : GenericMvcClass<Radar>
     {
-        private readonly RadarRepository _repository;
+        private readonly RadarRepositoryClass _repository;
 
-        public RadarService() { _repository = new(); }
+        public RadarServiceClass() { _repository = new(); }
 
         public override bool Delete(int id) => _repository.Delete(id);
 
