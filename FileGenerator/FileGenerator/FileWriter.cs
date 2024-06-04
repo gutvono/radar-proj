@@ -34,7 +34,7 @@ namespace FileGenerator
 
         public void GenerateCsv()
         {
-            string filePath = Path.Combine(BaseFilePath, "radars.csv");
+            string filePath = Path.Combine(BaseFilePath, "FileGenerator.csv");
             using (var writer = new StreamWriter(filePath))
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
@@ -45,7 +45,7 @@ namespace FileGenerator
 
         public void GenerateJson()
         {
-            string filePath = Path.Combine(BaseFilePath, "radars.json");
+            string filePath = Path.Combine(BaseFilePath, "FileGenerator.json");
             string json = JsonConvert.SerializeObject(_radarList, Formatting.Indented);
             File.WriteAllText(filePath, json);
             Console.WriteLine($"JSON file generated at {filePath}");
@@ -53,7 +53,7 @@ namespace FileGenerator
 
         public void GenerateXml()
         {
-            string filePath = Path.Combine(BaseFilePath, "radars.xml");
+            string filePath = Path.Combine(BaseFilePath, "FileGenerator.xml");
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Radar>));
             using (var writer = new StreamWriter(filePath))
             {
