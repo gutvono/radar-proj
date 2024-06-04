@@ -7,4 +7,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="32.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Persist\Repository\RadarRepository.csproj" />
+    <ProjectReference Include="..\..\ReadAndPersist\Repository\RAPRepository.csproj" />
+  </ItemGroup>
+
 </Project>

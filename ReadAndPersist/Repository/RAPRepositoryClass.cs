@@ -37,7 +37,47 @@ namespace RAPRepository
 
         public override Radar Get(int id) => throw new NotImplementedException();
 
-        public override List<Radar> GetAll() => throw new NotImplementedException();
+        public override List<Radar> GetAll()
+        {
+            List<Radar> RadarList = new List<Radar>();
+
+            try
+            {
+                var documents = _collection.Find(new BsonDocument()).ToList();
+
+                foreach (var doc in documents)
+                {
+                    Radar radar = new Radar
+                    {
+                        Id = doc.GetValue("id").AsInt32,
+                        Concessionaria = doc.GetValue("concessionaria").AsString,
+                        AnoDoPnvSnv = doc.GetValue("ano_do_pnv_snv").AsString,
+                        TipoDeRadar = doc.GetValue("tipo_de_radar").AsString,
+                        Rodovia = doc.GetValue("rodovia").AsString,
+                        Uf = doc.GetValue("uf").AsString,
+                        Km_m = doc.GetValue("km_m").AsString,
+                        Municipio = doc.GetValue("municipio").AsString,
+                        TipoPista = doc.GetValue("tipo_pista").AsString,
+                        Sentido = doc.GetValue("sentido").AsString,
+                        Situacao = doc.GetValue("situacao").AsString,
+                        DataDaInativacao = doc.Contains("data_da_inativacao") && doc["data_da_inativacao"].IsBsonNull ? null : (DateTime?)doc.GetValue("data_da_inativacao").ToUniversalTime(),
+                        Latitude = doc.GetValue("latitude").AsString,
+                        Longitude = doc.GetValue("longitude").AsString,
+                        VelocidadeLeve = doc.GetValue("velocidade_leve").AsString
+                    };
+
+                    RadarList.Add(radar);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("-- ERRO ao obter todos os registros...\n" +
+                    $"{e.Message}");
+            }
+
+            return RadarList;
+        }
+
 
         public override bool Insert(Radar entity) => throw new NotImplementedException();
 

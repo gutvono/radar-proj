@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileGenerator", "FileGenerator\FileGenerator.csproj", "{501B1F12-C5B5-4201-BCF9-0158D8C033DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileGenerator", "FileGenerator\FileGenerator.csproj", "{501B1F12-C5B5-4201-BCF9-0158D8C033DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadarRepository", "..\Persist\Repository\RadarRepository.csproj", "{6B21EC73-C8FC-4CCC-88E7-772ABAB49FD4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RAPRepository", "..\ReadAndPersist\Repository\RAPRepository.csproj", "{BF176653-B5EF-4B7A-89EF-5FAE0081D5AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{501B1F12-C5B5-4201-BCF9-0158D8C033DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{501B1F12-C5B5-4201-BCF9-0158D8C033DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{501B1F12-C5B5-4201-BCF9-0158D8C033DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B21EC73-C8FC-4CCC-88E7-772ABAB49FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B21EC73-C8FC-4CCC-88E7-772ABAB49FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B21EC73-C8FC-4CCC-88E7-772ABAB49FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B21EC73-C8FC-4CCC-88E7-772ABAB49FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF176653-B5EF-4B7A-89EF-5FAE0081D5AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF176653-B5EF-4B7A-89EF-5FAE0081D5AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF176653-B5EF-4B7A-89EF-5FAE0081D5AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF176653-B5EF-4B7A-89EF-5FAE0081D5AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
